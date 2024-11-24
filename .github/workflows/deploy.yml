@@ -1,0 +1,29 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Replace with your branch name if different
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # or any version you prefer
+
+      - name: Build the project (Optional if you're using a build tool like React, Vue, etc.)
+        run: |
+          npm install
+          npm run build  # Only necessary for dynamic apps, skip this for simple HTML apps
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # The branch GitHub Pages will deploy from
+          folder: .  # The folder where your HTML files are located (use '.' for root)
