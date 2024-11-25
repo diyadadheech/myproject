@@ -98,14 +98,13 @@
     </header>
     <main>
         <h2>Welcome!</h2>
-        <p id="welcomeMessage">This is my personal website showcasing my resume and bio data.</p>
-        <button id="editButton">Edit Message</button>
+        <p>This is my personal website showcasing my resume and bio data.</p>
         <button id="popupButton">More Info</button>
     </main>
     <div class="popup" id="popup">
         <div class="popup-content">
             <h3>About This Website</h3>
-            <p>This website is designed to showcase my resume and personal bio data. Navigate through the links above to explore more!</p>
+            <p>Hii!! This is Diya Dadheech</p>
             <button class="close-btn" id="closePopup">Close</button>
         </div>
     </div>
@@ -128,17 +127,6 @@
         window.addEventListener('click', (event) => {
             if (event.target === popup) {
                 popup.style.display = 'none';
-            }
-        });
-
-        // Editing welcome message
-        const editButton = document.getElementById('editButton');
-        const welcomeMessage = document.getElementById('welcomeMessage');
-
-        editButton.addEventListener('click', () => {
-            const newMessage = prompt('Enter a new welcome message:', welcomeMessage.textContent);
-            if (newMessage) {
-                welcomeMessage.textContent = newMessage;
             }
         });
     </script>
